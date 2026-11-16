@@ -7,20 +7,23 @@
     <style>
         body {
             background-color: #0b0f19;
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj4KICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBiMGYxOSIvPgogIDxwYXRoIGQ9Ik0gMzAwIDAgTCAwIDAgMCAzMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiLz4KICA8cGF0aCBkPSJNIDMwMCAxNTAgTCAwIDE1MCBNIDE1MCAzMDAgTCAxNTAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wMyIvPgogIDxyZWN0IHg9IjQ5IiB5PSI4MCIgd2lkdGg9IjIiIGhlaWdodD0iODAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cmVjdCB4PSI0NSIgeT0iMTAwIiB3aWR0aD0iMTAiIGhlaWdodD0iNDAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cmVjdCB4PSIxMjQiIHk9IjEyMCIgd2lkdGg9IjIiIGhlaWdodD0iNjAiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIxMjAiIHk9IjEzMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMjJjNTVlIi8+CiAgPHJlY3QgeD0iMTk5IiB5PSI1MCIgd2lkdGg9IjIiIGhlaWdodD0iNzAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cmVjdCB4PSIxOTUiIHk9IjYwIiB3aWR0aD0iMTAiIGhlaWdodD0iNDAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cmVjdCB4PSIyNzQiIHk9IjE1MCIgd2lkdGg9IjIiIGhlaWdodD0iOTAiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIyNzAiIHk9IjE3MCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjMjJjNTVlIi8+Cjwvc3ZnPg==");
-            background-repeat: repeat; background-attachment: fixed;
-            color: #f8fafc; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0;
+            /* 與首頁相同的擬真 K 線背景 */
+            background-image: 
+                linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.85)),
+                url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIj4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzBiMGYxOSIvPgogIDxwYXRoIGQ9Ik0wIDEwMCBIODAwIE0wIDIwMCBIODAwIE0wIDMwMCBIODAwIE0xMDAgMCBWNDAwIE0yMDAgMCBWNDAwIE0zMDAgMCBWNDAwIE00MDAgMCBWNDAwIE01MDAgMCBWNDAwIE02MDAgMCBWNDAwIE03MDAgMCBWNDAwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTTAgMjUwIEMgMjAwIDI4MCwgMzAwIDE1MCwgNTAwIDE4MCBTIDcwMCAxMDAsIDgwMCAxMjAiIHN0cm9rZT0iIzNiODJmNiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjMiLz4KICA8bGluZSB4MT0iNDAiIHkxPSIyMzAiIHgyPSI0MCIgeTI9IjI3MCIgc3Ryb2tlPSIjZWY0NDQ0Ii8+PHJlY3QgeD0iMzYiIHk9IjI0MCIgd2lkdGg9IjgiIGhlaWdodD0iMjAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iODAiIHkxPSIyMzUiIHgyPSI4MCIgeTI9IjI4MCIgc3Ryb2tlPSIjMjJjNTVlIi8+PHJlY3QgeD0iNzYiIHk9IjI0MCIgd2lkdGg9IjgiIGhlaWdodD0iMzAiIGZpbGw9IiMyMmM1NWUiLz4KICA8bGluZSB4MT0iMTIwIiB5MT0iMjYwIiB4Mj0iMTIwIiB5Mj0iMzEwIiBzdHJva2U9IiMyMmM1NWUiLz48cmVjdCB4PSIxMTYiIHk9IjI3MCIgd2lkdGg9IjgiIGhlaWdodD0iMjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8bGluZSB4MT0iMTYwIiB5MT0iMjUwIiB4Mj0iMTYwIiB5Mj0iMzAwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSIxNTYiIHk9IjI2MCIgd2lkdGg9IjgiIGhlaWdodD0iMjUiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iMjAwIiB5MT0iMjEwIiB4Mj0iMjAwIiB5Mj0iMjgwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSIxOTYiIHk9IjIzMCIgd2lkdGg9IjgiIGhlaWdodD0iNDAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iMjQwIiB5MT0iMTgwIiB4Mj0iMjQwIiB5Mj0iMjUwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSIyMzYiIHk9IjE5MCIgd2lkdGg9IjgiIGhlaWdodD0iNDUiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iMjgwIiB5MT0iMTcwIiB4Mj0iMjgwIiB5Mj0iMjIwIiBzdHJva2U9IiMyMmM1NWUiLz48cmVjdCB4PSIyNzYiIHk9IjE4MCIgd2lkdGg9IjgiIGhlaWdodD0iMzAiIGZpbGw9IiMyMmM1NWUiLz4KICA8bGluZSB4MT0iMzIwIiB5MT0iMTQwIiB4Mj0iMzIwIiB5Mj0iMjAwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSIzMTYiIHk9IjE1MCIgd2lkdGg9IjgiIGhlaWdodD0iMzUiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iMzYwIiB5MT0iMTIwIiB4Mj0iMzYwIiB5Mj0iMTgwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSIzNTYiIHk9IjEzMCIgd2lkdGg9IjgiIGhlaWdodD0iMjUiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iNDAwIiB5MT0iMTI1IiB4Mj0iNDAwIiB5Mj0iMTYwIiBzdHJva2U9IiMyMmM1NWUiLz48cmVjdCB4PSIzOTYiIHk9IjEzMCIgd2lkdGg9IjgiIGhlaWdodD0iMjAiIGZpbGw9IiMyMmM1NWUiLz4KICA8bGluZSB4MT0iNDQwIiB5MT0iMTQwIiB4Mj0iNDQwIiB5Mj0iMTkwIiBzdHJva2U9IiMyMmM1NWUiLz48cmVjdCB4PSI0MzYiIHk9IjE0NSIgd2lkdGg9IjgiIGhlaWdodD0iMzUiIGZpbGw9IiMyMmM1NWUiLz4KICA8bGluZSB4MT0iNDgwIiB5MT0iMTMwIiB4Mj0iNDgwIiB5Mj0iMTcwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSI0NzYiIHk9IjE0MCIgd2lkdGg9IjgiIGhlaWdodD0iMjAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iNTIwIiB5MT0iMTAwIiB4Mj0iNTIwIiB5Mj0iMTYwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSI1MTYiIHk9IjExMCIgd2lkdGg9IjgiIGhlaWdodD0iMzUiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iNTYwIiB5MT0iODAiIHgyPSI1NjAiIHkyPSIxMzAiIHN0cm9rZT0iI2VmNDQ0NCIvPjxyZWN0IHg9IjU1NiIgeT0iOTAiIHdpZHRoPSI4IiBoZWlnaHQ9IjMwIiBmaWxsPSIjZWY0NDQ0Ii8+CiAgPGxpbmUgeDE9IjYwMCIgeTE9Ijg1IiB4Mj0iNjAwIiB5Mj0iMTQwIiBzdHJva2U9IiMyMmM1NWUiLz48cmVjdCB4PSI1OTYiIHk9Ijk1IiB3aWR0aD0iOCIgaGVpZ2h0PSIzNSIgZmlsbD0iIzIyYzU1ZSIvPgogIDxsaW5lIHgxPSI2NDAiIHkxPSI3MCIgeDI9IjY0MCIgeTI9IjExMCIgc3Ryb2tlPSIjZWY0NDQ0Ii8+PHJlY3QgeD0iNjM2IiB5PSI4MCIgd2lkdGg9IjgiIGhlaWdodD0iMjAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8bGluZSB4MT0iNjgwIiB5MT0iNzUiIHgyPSI2ODAiIHkyPSIxMjAiIHN0cm9rZT0iIzIyYzU1ZSIvPjxyZWN0IHg9IjY3NiIgeT0iODUiIHdpZHRoPSI4IiBoZWlnaHQ9IjI1IiBmaWxsPSIjMjJjNTVlIi8+CiAgPGxpbmUgeDE9IjcyMCIgeTE9IjUwIiB4Mj0iNzIwIiB5Mj0iMTAwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSI3MTYiIHk9IjYwIiB3aWR0aD0iOCIgaGVpZ2h0PSIzMCIgZmlsbD0iI2VmNDQ0NCIvPgogIDxsaW5lIHgxPSI3NjAiIHkxPSIzMCIgeDI9Ijc2MCIgeTI9IjgwIiBzdHJva2U9IiNlZjQ0NDQiLz48cmVjdCB4PSI3NTYiIHk9IjQ1IiB3aWR0aD0iOCIgaGVpZ2h0PSIyNSIgZmlsbD0iI2VmNDQ0NCIvPgo8L3N2Zz4=");
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: #f8fafc; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; min-height: 100vh;
         }
-        nav { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); padding: 20px; border-bottom: 1px solid #334155; }
+        nav { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(15px); padding: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: sticky; top: 0; z-index: 100; }
         nav a { color: #60a5fa; text-decoration: none; font-weight: bold; }
         .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
         header h1 { font-size: 2.2rem; color: #ef4444; margin-bottom: 5px; }
         .card {
-            background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px);
+            background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid #60a5fa;
-            border-radius: 12px; padding: 25px; margin-bottom: 25px;
+            border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
-        .card h2 { margin-top: 0; color: #f8fafc; border-bottom: 1px solid #334155; padding-bottom: 10px;}
+        .card h2 { margin-top: 0; color: #f8fafc; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 10px;}
         .card p, .card li { color: #cbd5e1; line-height: 1.8; }
         footer { text-align: center; padding: 30px; color: #64748b; font-size: 0.9rem; }
     </style>
@@ -31,12 +34,10 @@
         <header>
             <h1>2330 台積電 (TSMC)</h1>
         </header>
-
         <div class="card">
             <h2>🏢 企業在做甚麼</h2>
             <p>台灣積體電路製造（TSMC）是全球最大的晶圓代工廠。提供先進與成熟製程技術，為蘋果、輝達等頂尖科技公司生產晶片。護城河在於極高良率與龐大資本支出壁壘。</p>
         </div>
-
         <div class="card" style="border-left-color: #ef4444;">
             <h2>⚠️ 投資風險</h2>
             <ul>
@@ -44,7 +45,6 @@
                 <li><strong>高資本支出壓力</strong>：維持製程領先需每年投入數百億美元，折舊壓力高。</li>
             </ul>
         </div>
-
         <div class="card" style="border-left-color: #22c55e;">
             <h2>📈 法人評估未來走向</h2>
             <p>隨著 AI 與 HPC 需求爆發，2奈米製程訂單能見度高。法人預期營收將維持強勁成長，並透過全球佈局（美、日、德）緩解地緣疑慮。</p>
