@@ -3,68 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETF 理財知識庫</title>
+    <title>ETF 專業分析儀表板</title>
     <style>
+        /* 股市網格與深色背景 */
         body {
-            background-color: #121212;
-            color: #FFFFFF;
+            background-color: #0f172a;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: #f8fafc;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        /* 模擬背景紅綠 K 線光暈 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                linear-gradient(135deg, rgba(255, 51, 51, 0.05) 0%, transparent 40%),
+                linear-gradient(315deg, rgba(0, 170, 0, 0.05) 0%, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
         }
         h1 {
-            color: #4CAF50;
+            color: #ff3333;
+            font-size: 2.5rem;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 51, 51, 0.3);
         }
         p.subtitle {
-            color: #AAAAAA;
-            margin-bottom: 40px;
+            color: #94a3b8;
+            font-size: 1.1rem;
         }
         .grid {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
             justify-content: center;
-            max-width: 800px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
+        /* 分析卡片樣式 */
         .card {
-            background-color: #1E1E1E;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 20px;
-            width: 250px;
+            background-color: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(4px);
+            border: 1px solid #334155;
+            border-left: 4px solid #ff3333; /* 預設紅色代表偏多 */
+            border-radius: 6px;
+            padding: 25px;
+            width: 280px;
             text-decoration: none;
-            color: #FFFFFF;
-            transition: transform 0.2s, border-color 0.2s;
+            color: #f8fafc;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
         }
         .card:hover {
             transform: translateY(-5px);
-            border-color: #4CAF50;
+            border-color: #ff3333;
+            box-shadow: 0 10px 15px -3px rgba(255, 51, 51, 0.2);
+        }
+        .card.bearish {
+            border-left: 4px solid #22c55e; /* 綠色代表偏空 */
+        }
+        .card.bearish:hover {
+            border-color: #22c55e;
+            box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.2);
         }
         .card h2 {
             margin-top: 0;
-            color: #4CAF50;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ticker {
+            font-size: 1rem;
+            background: #334155;
+            padding: 3px 8px;
+            border-radius: 4px;
         }
         .card p {
-            font-size: 0.9rem;
-            color: #CCCCCC;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
         }
+        .trend-up { color: #ff3333; font-weight: bold; }
+        .trend-down { color: #22c55e; font-weight: bold; }
     </style>
 </head>
 <body>
-    <h1>ETF 理財知識庫</h1>
-    <p class="subtitle">基於 AGENTS.md 規則自動擴充的靜態網站</p>
+    <header>
+        <h1>ETF 專業分析儀表板</h1>
+        <p class="subtitle">基於 AGENTS.md 驅動的自動化財經知識庫</p>
+    </header>
     
     <div class="grid">
-        <!-- AI 未來會根據 AGENTS.md 的規則，在這裡自動加上新的卡片 -->
+        <!-- AI 未來會根據 AGENTS.md 的規則，在這裡自動加上新的 ETF 分析卡片 -->
         <a href="#" class="card">
-            <h2>0050 元大台灣50</h2>
-            <p>即將新增... (測試卡片)</p>
+            <h2>元大台灣50 <span class="ticker">0050</span></h2>
+            <p>趨勢：<span class="trend-up">均線多頭排列 ▲</span></p>
+            <p>點評：大盤核心持股，受惠於半導體權重，適合定期定額投入。 (測試建檔中...)</p>
+        </a>
+
+        <a href="#" class="card bearish">
+            <h2>反向測試ETF <span class="ticker">0000R</span></h2>
+            <p>趨勢：<span class="trend-down">跌破月線 ▼</span></p>
+            <p>點評：做為綠色下跌視覺測試版型，提醒風險控管的重要。</p>
         </a>
     </div>
 </body>
