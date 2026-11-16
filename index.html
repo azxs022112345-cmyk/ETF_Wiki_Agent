@@ -3,117 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個股分析儀表板</title>
+    <title>個人財經觀測站</title>
     <style>
         body {
-            /* 1. 設定深黑藍底色 */
             background-color: #0b0f19;
-            /* 2. 使用漸層繪製網格與 K 線 */
-            background-image: 
-                /* 淺色微弱網格 */
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                
-                /* 第一組紅 K 線 (實體 + 上下影線) */
-                linear-gradient(#ef4444, #ef4444),
-                linear-gradient(#ef4444, #ef4444),
-                
-                /* 第一組綠 K 線 (實體 + 上下影線) */
-                linear-gradient(#22c55e, #22c55e),
-                linear-gradient(#22c55e, #22c55e),
-
-                /* 第二組紅 K 線 */
-                linear-gradient(#ef4444, #ef4444),
-                linear-gradient(#ef4444, #ef4444),
-
-                /* 第二組綠 K 線 */
-                linear-gradient(#22c55e, #22c55e),
-                linear-gradient(#22c55e, #22c55e);
-
-            /* 設定每個繪圖元素的尺寸 */
-            background-size: 
-                40px 40px,           /* 網格大小 */
-                40px 40px,           /* 網格大小 */
-                8px 30px, 2px 50px,  /* 紅K實體, 影線 */
-                10px 40px, 2px 70px, /* 綠K實體, 影線 */
-                12px 35px, 2px 60px, /* 紅K2實體, 影線 */
-                8px 45px, 2px 80px;  /* 綠K2實體, 影線 */
-
-            /* 控制 K 線出現在背景的各個隨機位置 */
-            background-position: 
-                0 0, 0 0,
-                15% 20%, calc(15% + 3px) 10%,
-                40% 60%, calc(40% + 4px) 45%,
-                70% 30%, calc(70% + 5px) 20%,
-                85% 75%, calc(85% + 3px) 60%;
-
+            /* 採用 Base64 絕對不會被 GitHub 阻擋，保證出現 K 線與網格 */
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj4KICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBiMGYxOSIvPgogIDxwYXRoIGQ9Ik0gMzAwIDAgTCAwIDAgMCAzMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiLz4KICA8cGF0aCBkPSJNIDMwMCAxNTAgTCAwIDE1MCBNIDE1MCAzMDAgTCAxNTAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wMyIvPgogIDxyZWN0IHg9IjQ5IiB5PSI4MCIgd2lkdGg9IjIiIGhlaWdodD0iODAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cmVjdCB4PSI0NSIgeT0iMTAwIiB3aWR0aD0iMTAiIGhlaWdodD0iNDAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cmVjdCB4PSIxMjQiIHk9IjEyMCIgd2lkdGg9IjIiIGhlaWdodD0iNjAiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIxMjAiIHk9IjEzMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMjJjNTVlIi8+CiAgPHJlY3QgeD0iMTk5IiB5PSI1MCIgd2lkdGg9IjIiIGhlaWdodD0iNzAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cmVjdCB4PSIxOTUiIHk9IjYwIiB3aWR0aD0iMTAiIGhlaWdodD0iNDAiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cmVjdCB4PSIyNzQiIHk9IjE1MCIgd2lkdGg9IjIiIGhlaWdodD0iOTAiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIyNzAiIHk9IjE3MCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjMjJjNTVlIi8+Cjwvc3ZnPg==");
             background-repeat: repeat;
             background-attachment: fixed;
             color: #f8fafc;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
         }
-
         nav {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #334155;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px);
+            padding: 20px; text-align: center; border-bottom: 1px solid #334155;
         }
         h1 { margin: 0; font-size: 1.8rem; letter-spacing: 2px; }
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        /* 毛玻璃卡片樣式 */
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; display: flex; justify-content: center; }
         .card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-left: 4px solid #ef4444; /* 紅色代表上漲標的 */
-            border-radius: 12px;
-            padding: 25px;
-            width: 300px;
-            text-decoration: none;
-            color: #f8fafc;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid #ef4444;
+            border-radius: 12px; padding: 25px; width: 320px; text-decoration: none; color: #f8fafc;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #ef4444;
-            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
-            background: rgba(30, 41, 59, 0.85);
-        }
-        .card h2 { 
-            color: #ef4444; 
-            margin-top: 0; 
-            display: flex; 
-            justify-content: space-between;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 10px;
-        }
+        .card:hover { transform: translateY(-5px); border-color: #ef4444; }
+        .card h2 { color: #ef4444; margin-top: 0; display: flex; justify-content: space-between; border-bottom: 1px solid #334155; padding-bottom: 10px;}
         .card p { color: #94a3b8; line-height: 1.6; }
     </style>
 </head>
 <body>
-    <nav>
-        <h1>個股分析儀表板</h1>
-    </nav>
+    <nav><h1>個人財經觀測站</h1></nav>
     <div class="container">
-        <!-- 點擊進入台積電頁面 -->
+        <!-- 點擊這個連結會去找 2330.html，所以你一定要上傳 2330.html -->
         <a href="2330.html" class="card">
             <h2>台積電 <span>2330</span></h2>
-            <p>全球晶圓代工龍頭，先進製程領先者。受惠於半導體權重與 AI 發展。</p>
+            <p>全球晶圓代工龍頭，先進製程領先者。</p>
             <p style="color:#ef4444; font-weight:bold; margin-top: 15px;">👉 點擊查看深度分析</p>
         </a>
     </div>
