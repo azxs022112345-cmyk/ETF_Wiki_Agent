@@ -5,22 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個股分析儀表板</title>
     <style>
-        /* 保證顯示的純 CSS 網格與 K 線背景 */
         body {
+            /* 1. 設定深黑藍底色 */
             background-color: #0b0f19;
+            /* 2. 使用漸層繪製網格與 K 線 */
             background-image: 
+                /* 淺色微弱網格 */
                 linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(#ef4444, #ef4444), linear-gradient(#ef4444, #ef4444),
-                linear-gradient(#22c55e, #22c55e), linear-gradient(#22c55e, #22c55e);
+                
+                /* 第一組紅 K 線 (實體 + 上下影線) */
+                linear-gradient(#ef4444, #ef4444),
+                linear-gradient(#ef4444, #ef4444),
+                
+                /* 第一組綠 K 線 (實體 + 上下影線) */
+                linear-gradient(#22c55e, #22c55e),
+                linear-gradient(#22c55e, #22c55e),
+
+                /* 第二組紅 K 線 */
+                linear-gradient(#ef4444, #ef4444),
+                linear-gradient(#ef4444, #ef4444),
+
+                /* 第二組綠 K 線 */
+                linear-gradient(#22c55e, #22c55e),
+                linear-gradient(#22c55e, #22c55e);
+
+            /* 設定每個繪圖元素的尺寸 */
             background-size: 
-                40px 40px, 40px 40px, 
-                2px 80px, 10px 40px,
-                2px 100px, 10px 60px;
+                40px 40px,           /* 網格大小 */
+                40px 40px,           /* 網格大小 */
+                8px 30px, 2px 50px,  /* 紅K實體, 影線 */
+                10px 40px, 2px 70px, /* 綠K實體, 影線 */
+                12px 35px, 2px 60px, /* 紅K2實體, 影線 */
+                8px 45px, 2px 80px;  /* 綠K2實體, 影線 */
+
+            /* 控制 K 線出現在背景的各個隨機位置 */
             background-position: 
                 0 0, 0 0,
-                15% 20%, calc(15% - 4px) 30%,
-                80% 60%, calc(80% - 4px) 70%;
+                15% 20%, calc(15% + 3px) 10%,
+                40% 60%, calc(40% + 4px) 45%,
+                70% 30%, calc(70% + 5px) 20%,
+                85% 75%, calc(85% + 3px) 60%;
+
             background-repeat: repeat;
             background-attachment: fixed;
             color: #f8fafc;
@@ -28,6 +54,7 @@
             margin: 0;
             padding: 0;
         }
+
         nav {
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(10px);
@@ -47,36 +74,47 @@
             gap: 20px;
             flex-wrap: wrap;
         }
+        /* 毛玻璃卡片樣式 */
         .card {
-            background: rgba(30, 41, 59, 0.6);
+            background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #ef4444; /* 紅色代表上漲標的 */
             border-radius: 12px;
             padding: 25px;
             width: 300px;
             text-decoration: none;
             color: #f8fafc;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .card:hover {
             transform: translateY(-5px);
             border-color: #ef4444;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
+            background: rgba(30, 41, 59, 0.85);
         }
-        .card h2 { color: #ef4444; margin-top: 0; display: flex; justify-content: space-between;}
-        .card p { color: #94a3b8; line-height: 1.5; }
+        .card h2 { 
+            color: #ef4444; 
+            margin-top: 0; 
+            display: flex; 
+            justify-content: space-between;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+        }
+        .card p { color: #94a3b8; line-height: 1.6; }
     </style>
 </head>
 <body>
     <nav>
-        <h1>STOCKS<span style="color:#ef4444;">COPE</span> 儀表板</h1>
+        <h1>個股分析儀表板</h1>
     </nav>
     <div class="container">
-        <!-- 點擊這張卡片就能進入台積電分析頁面 -->
+        <!-- 點擊進入台積電頁面 -->
         <a href="2330.html" class="card">
             <h2>台積電 <span>2330</span></h2>
-            <p>全球晶圓代工龍頭，先進製程領先者。</p>
-            <p style="color:#ef4444; font-weight:bold;">👉 點擊查看深度分析</p>
+            <p>全球晶圓代工龍頭，先進製程領先者。受惠於半導體權重與 AI 發展。</p>
+            <p style="color:#ef4444; font-weight:bold; margin-top: 15px;">👉 點擊查看深度分析</p>
         </a>
     </div>
 </body>
